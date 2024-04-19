@@ -21,12 +21,7 @@ class _SpalshViewBodyState extends State<SpalshViewBody> {
     navigateToHome();
   }
 
-  void navigateToHome() {
-    Future.delayed(const Duration(milliseconds: 2000), () {
-      //transition تستخدم لعمل انيميشن للانتقال من صفحة لصفحة عن طريق الجيت
-      Get.to(()=> const HomeView(), transition: Transition.fadeIn,duration: kTransitionDuration);
-    });
-  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -36,11 +31,12 @@ class _SpalshViewBodyState extends State<SpalshViewBody> {
         const Spacer(
           flex: 2,
         ),
-        Image.asset(AssetsData.logo).animate().slideY(begin: -1.2,end: 0,
-            duration: Duration(milliseconds: 600)),
+        Image.asset(AssetsData.logo).animate().fadeIn(duration: 600.ms)
+            .then(delay: 100.ms) // baseline=800ms
+            .slideY(begin: .50,end: 0,).shimmer(color: kPrimaryColor, duration: const Duration(milliseconds: 1200)),
         const Text("Read Free Books",
           textAlign:  TextAlign.center,
-        ).animate().fadeIn(duration: Duration(milliseconds: 1700)),
+        ).animate().then(delay: 700.ms).fadeIn(duration: const Duration(milliseconds: 1200)),
         const Spacer(),
         SizedBox(
           child: Lottie.asset(AnimationsData.bookAnimation,
@@ -48,8 +44,14 @@ class _SpalshViewBodyState extends State<SpalshViewBody> {
             height: 180,
             animate: true,
           ),
-        ).animate().fadeIn(duration: Duration(milliseconds: 1200)),
+        ).animate().scale(delay: 500.ms).fadeIn(duration: const Duration(milliseconds: 1000)),
       ],
     );
+  }
+  void navigateToHome() {
+    Future.delayed(const Duration(milliseconds: 3000), () {
+      //transition تستخدم لعمل انيميشن للانتقال من صفحة لصفحة عن طريق الجيت
+      Get.to(()=> const HomeView(), transition: Transition.fadeIn,duration: kTransitionDuration);
+    });
   }
 }
