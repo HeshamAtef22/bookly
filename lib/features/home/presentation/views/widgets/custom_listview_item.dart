@@ -10,6 +10,7 @@ class FeaturedListViewItem extends StatelessWidget {
       //نسبة الطول والعرض بالنسبة للصورة
       aspectRatio: 3 / 5,
       child: Container(
+        margin:  const EdgeInsets.only(right: 10),
         decoration: BoxDecoration(
           color: Colors.red,
             borderRadius: BorderRadius.circular(16),
