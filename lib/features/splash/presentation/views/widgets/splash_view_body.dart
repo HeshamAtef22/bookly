@@ -1,9 +1,10 @@
 import 'package:bookly/constants.dart';
+import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:lottie/lottie.dart';
 
 class SpalshViewBody extends StatefulWidget {
@@ -50,8 +51,9 @@ class _SpalshViewBodyState extends State<SpalshViewBody> {
   }
   void navigateToHome() {
     Future.delayed(const Duration(milliseconds: 3000), () {
-      //transition تستخدم لعمل انيميشن للانتقال من صفحة لصفحة عن طريق الجيت
-      Get.to(()=> const HomeView(), transition: Transition.fadeIn,duration: kTransitionDuration);
+      /*//transition تستخدم لعمل انيميشن للانتقال من صفحة لصفحة عن طريق الجيت
+      Get.to(()=> const HomeView(), transition: Transition.fadeIn,duration: kTransitionDuration);*/
+      GoRouter.of(context).push(AppRouter.kHomeView);
     });
   }
 }
