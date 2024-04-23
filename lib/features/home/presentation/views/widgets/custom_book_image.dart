@@ -8,7 +8,7 @@ class CustomBookImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return  AspectRatio(
       //نسبة الطول والعرض بالنسبة للصورة
-      aspectRatio: 3 / 5,
+      aspectRatio: 2.6 / 4,
       child: Container(
         margin:  const EdgeInsets.only(right: 10),
         decoration: BoxDecoration(
