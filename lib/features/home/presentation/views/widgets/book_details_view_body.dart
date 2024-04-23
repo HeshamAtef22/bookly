@@ -1,9 +1,12 @@
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/core/widgets/custom_botton.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_rating.dart';
+import 'package:bookly/features/home/presentation/views/widgets/box_action.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_details_appbar.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
@@ -13,21 +16,21 @@ class BookDetailsViewBody extends StatelessWidget {
 
     var width = MediaQuery.of(context).size.width;
     return  Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Column(
         children: [
-          CustomBookDetailsAppBar(),
+          const CustomBookDetailsAppBar(),
           const SizedBox(
             height: 36,
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: width * .2),
-            child: CustomBookImage(),
+            child: const CustomBookImage(),
           ),
           const SizedBox(
             height: 43,
           ),
-          Text("The Jungle Book",style: Styles.textStyle30,),
+          const Text("The Jungle Book",style: Styles.textStyle30,),
           const SizedBox(
             height: 6,
           ),
@@ -40,9 +43,16 @@ class BookDetailsViewBody extends StatelessWidget {
             height: 18,
            ),
            BookRating(mainAxisAlignment: MainAxisAlignment.center,),
+           const SizedBox(
+            height: 37,
+           ),
+           const BooksAction(),
         ],
       ),
     );
   }
 }
+
+
+
 
