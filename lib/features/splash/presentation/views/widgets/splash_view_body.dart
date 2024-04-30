@@ -15,40 +15,55 @@ class SpalshViewBody extends StatefulWidget {
 }
 
 class _SpalshViewBodyState extends State<SpalshViewBody> {
-
   @override
   void initState() {
     super.initState();
     navigateToHome();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment:  CrossAxisAlignment.stretch,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         const Spacer(
           flex: 2,
         ),
-        Image.asset(AssetsData.logo).animate().fadeIn(duration: 600.ms)
+        Image.asset(AssetsData.logo)
+            .animate()
+            .fadeIn(duration: 600.ms)
             .then(delay: 100.ms) // baseline=800ms
-            .slideY(begin: .50,end: 0,).shimmer(color: kPrimaryColor, duration: const Duration(milliseconds: 1200)),
-        const Text("Read Free Books",
-          textAlign:  TextAlign.center,
-        ).animate().then(delay: 700.ms).fadeIn(duration: const Duration(milliseconds: 1200)),
+            .slideY(
+              begin: .50,
+              end: 0,
+            )
+            .shimmer(
+                color: kPrimaryColor,
+                duration: const Duration(milliseconds: 1200)),
+        const Text(
+          "Read Free Books",
+          textAlign: TextAlign.center,
+        )
+            .animate()
+            .then(delay: 700.ms)
+            .fadeIn(duration: const Duration(milliseconds: 1200)),
         const Spacer(),
         SizedBox(
-          child: Lottie.asset(AnimationsData.bookAnimation,
+          child: Lottie.asset(
+            AnimationsData.bookAnimation,
             width: 180,
             height: 180,
             animate: true,
           ),
-        ).animate().scale(delay: 500.ms).fadeIn(duration: const Duration(milliseconds: 1000)),
+        )
+            .animate()
+            .scale(delay: 500.ms)
+            .fadeIn(duration: const Duration(milliseconds: 1000)),
       ],
     );
   }
+
   void navigateToHome() {
     Future.delayed(const Duration(milliseconds: 3000), () {
       /*//transition تستخدم لعمل انيميشن للانتقال من صفحة لصفحة عن طريق الجيت

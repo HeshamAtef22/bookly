@@ -6,19 +6,16 @@ class CustomBookImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  AspectRatio(
+    return AspectRatio(
       //نسبة الطول والعرض بالنسبة للصورة
       aspectRatio: 2.6 / 4,
       child: Container(
-        margin:  const EdgeInsets.only(right: 10),
+        margin: const EdgeInsets.only(right: 10),
         decoration: BoxDecoration(
-          color: Colors.red,
+            color: Colors.red,
             borderRadius: BorderRadius.circular(16),
             image: const DecorationImage(
-                image: AssetImage(AssetsData.test_book1),
-                fit: BoxFit.fill
-            )
-        ),
+                image: AssetImage(AssetsData.test_book1), fit: BoxFit.fill)),
       ),
     );
   }

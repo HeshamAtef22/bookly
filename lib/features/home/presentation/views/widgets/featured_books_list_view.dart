@@ -9,7 +9,7 @@ class FeaturedBooksListView extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.3,
       child: ListView.builder(
-          scrollDirection:  Axis.horizontal,
+          scrollDirection: Axis.horizontal,
           itemCount: 5,
           itemBuilder: (context, index) {
             return CustomBookImage();

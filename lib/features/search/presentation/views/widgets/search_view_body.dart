@@ -11,16 +11,16 @@ class SearhViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 24),
-      child: Column(
-        crossAxisAlignment:  CrossAxisAlignment.start,
-        children: [
-          CustomSearchTextField(),
-          const SizedBox(height: 24),
-          Text("Search Result",style: Styles.textStyle18,),
-          const SizedBox(height: 24),
-          Expanded(child: SearchResultListView()),
-        ]
-      ),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        CustomSearchTextField(),
+        const SizedBox(height: 24),
+        Text(
+          "Search Result",
+          style: Styles.textStyle18,
+        ),
+        const SizedBox(height: 24),
+        Expanded(child: SearchResultListView()),
+      ]),
     );
   }
 }
@@ -33,7 +33,7 @@ class SearchResultListView extends StatelessWidget {
     return ListView.builder(
       //physics:  const NeverScrollableScrollPhysics(),
       padding: EdgeInsets.zero,
-      itemBuilder:  (context,index) => const Padding(
+      itemBuilder: (context, index) => const Padding(
         padding: EdgeInsets.only(bottom: 20),
         child: BookListViewItem(),
       ),
@@ -41,7 +41,3 @@ class SearchResultListView extends StatelessWidget {
     );
   }
 }
-
-
-
-

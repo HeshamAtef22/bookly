@@ -4,15 +4,13 @@ import 'package:bookly/features/home/domain/entities/book_entitiy.dart';
 import 'package:bookly/features/home/domain/repos/home_repo.dart';
 import 'package:dartz/dartz.dart';
 
-class fetchFeaturedBooksUseCase extends UseCase<List<BookEntity>,void>
-{
+class fetchFeaturedBooksUseCase extends UseCase<List<BookEntity>, void> {
   //1-
   //ال use case هي اللي بهندل طريقة التنفيذ او الاكشن اللي بيقوم بيه اليوزر وبيكون ليها اكسس علي الريبو
   //لانها بتتعامل مع الريبو فهاخد اوبجيكت من الريبو كلاس داخل ال use case
   final HomeRepo homeRepo;
 
   fetchFeaturedBooksUseCase(this.homeRepo);
-
 
   //7-
   //هنا لما ورثة من الكلاس use case  استخدمت الميثود call اللي فيه ومررت نوع الداتا اللي راجعاله عن طريق

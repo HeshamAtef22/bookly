@@ -4,7 +4,7 @@ import 'package:bookly/features/home/domain/entities/book_entitiy.dart';
 import 'package:bookly/features/home/domain/repos/home_repo.dart';
 import 'package:dartz/dartz.dart';
 
-class fetchNewestSellers extends UseCase<List<BookEntity>,void> {
+class fetchNewestSellers extends UseCase<List<BookEntity>, void> {
   final HomeRepo homeRepo;
   fetchNewestSellers(this.homeRepo);
   @override
