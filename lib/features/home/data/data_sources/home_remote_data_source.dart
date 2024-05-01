@@ -33,6 +33,9 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
     var data = await apiService.get(endPoint: 'volumes?Filtering=free-ebooks&Sorting=newest&q=programming');
     //ليست استقبل فيها الداتا اللي راجعه من api
     List<BookEntity> books = getBooksList(data);
+
+    //هستخدم Hive لعمل cached للداتا عند اليوزر واستخدمها كداتا local
+    saveBooksData(books, kNewestBooks);
     return books;
   }
 
