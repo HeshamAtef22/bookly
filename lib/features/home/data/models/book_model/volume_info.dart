@@ -14,7 +14,7 @@ class VolumeInfo {
   int? pageCount;
   String? printType;
   List<String>? categories;
-  String? maturityRating;
+  num? maturityRating;
   bool? allowAnonLogging;
   String? contentVersion;
   PanelizationSummary? panelizationSummary;
@@ -62,7 +62,7 @@ class VolumeInfo {
         pageCount: json['pageCount'] as int?,
         printType: json['printType'] as String?,
         categories: json['categories'] as List<String>?,
-        maturityRating: json['maturityRating'] as String?,
+        maturityRating: json['maturityRating'] as num?,
         allowAnonLogging: json['allowAnonLogging'] as bool?,
         contentVersion: json['contentVersion'] as String?,
         panelizationSummary: json['panelizationSummary'] == null
