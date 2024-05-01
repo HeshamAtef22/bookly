@@ -18,7 +18,8 @@ class _SpalshViewBodyState extends State<SpalshViewBody> {
   @override
   void initState() {
     super.initState();
-    navigateToHome();
+    navigateToLogin();
+    //navigateToHome();
   }
 
   @override
@@ -69,6 +70,12 @@ class _SpalshViewBodyState extends State<SpalshViewBody> {
       /*//transition تستخدم لعمل انيميشن للانتقال من صفحة لصفحة عن طريق الجيت
       Get.to(()=> const HomeView(), transition: Transition.fadeIn,duration: kTransitionDuration);*/
       GoRouter.of(context).push(AppRouter.kHomeView);
+    });
+  }
+
+  void navigateToLogin() {
+    Future.delayed(const Duration(milliseconds: 3000), () {
+      GoRouter.of(context).push(AppRouter.kLoginView);
     });
   }
 }
