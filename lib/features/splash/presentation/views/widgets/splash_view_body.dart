@@ -18,7 +18,7 @@ class _SpalshViewBodyState extends State<SpalshViewBody> {
   @override
   void initState() {
     super.initState();
-    navigateToLogin();
+    navigateToWelcome();
     //navigateToHome();
   }
 
@@ -76,6 +76,11 @@ class _SpalshViewBodyState extends State<SpalshViewBody> {
   void navigateToLogin() {
     Future.delayed(const Duration(milliseconds: 3000), () {
       GoRouter.of(context).push(AppRouter.kLoginView);
+    });
+  }
+  void navigateToWelcome() {
+    Future.delayed(const Duration(milliseconds: 3000), () {
+      GoRouter.of(context).push(AppRouter.kWelcomeView);
     });
   }
 }
