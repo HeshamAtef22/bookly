@@ -33,7 +33,7 @@ class HemoRepoImpl extends HomeRepo{
       if(e is DioError){
         return left(ServerFailure.fromDioError(e));
       }
-
+      return left(ServerFailure(e.toString()));
     }
   }
 
@@ -50,6 +50,9 @@ class HemoRepoImpl extends HomeRepo{
       //في حالة ان القيمة هترجع بدون اي مشاكل فرجعلي الجزء الr الخاص بال Either غير كدا لو الداتا فيها مشكله رجعلي الجزء الl
       return right(books) ;
     }  catch (e) {
+      if(e is DioError){
+        return left(ServerFailure.fromDioError(e));
+      }
       return left(ServerFailure(e.toString()));
     }
   }

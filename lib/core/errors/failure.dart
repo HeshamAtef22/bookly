@@ -31,10 +31,20 @@ class ServerFailure extends Failure {
       case DioExceptionType.unknown:
         return ServerFailure('Opps There was an error. Please try again');
       case DioExceptionType.badResponse:
-      // TODO: Handle this case.
+      return ServerFailure.fromResponse(error.response!.statusCode!, error.response!.data);
     }
   }
-  
+
+  factory ServerFailure.fromResponse(int statuscode, dynamic response) {
+  if(statuscode == 404){
+    return ServerFailure('Your request not found');
+  }else if(statuscode == 500){
+    return ServerFailure('Internal Server Error');
+  }else if(statuscode == 400 || statuscode == 401 || statuscode == 403){
+    return ServerFailure(response['error']['message']);
+  }else {
+    return ServerFailure('Opps There was an error. Please try again');
+  }
 }
 
 
