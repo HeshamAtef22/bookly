@@ -7,13 +7,13 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
 //HemoRepoImpl مهمته انه يجمع او يعمل فيتش للداتامن ال اي بي اي او من الكاش لو الداتا موجوده في الكاش
-class HemoRepoImpl extends HomeRepo{
+class HomeRepoImpl extends HomeRepo{
 
   //هعمل اوبجيكت من ال HomeRemoteDataSource و HomeLocalDataSource
   //علشان اقدر اعمل اكسس عليهم
   final HomeRemoteDataSource homeRemoteDataSource;
   final HomeLocalDataSource homeLocalDataSource;
-  HemoRepoImpl({required this.homeRemoteDataSource,required this.homeLocalDataSource});
+  HomeRepoImpl({required this.homeRemoteDataSource,required this.homeLocalDataSource});
 
 
   @override
