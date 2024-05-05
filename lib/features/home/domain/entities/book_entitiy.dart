@@ -13,9 +13,9 @@ class BookEntity {
   @HiveField(3)
   final String? authorName;
   @HiveField(4)
-  final num? rateing;
+  final String? rateing;
   @HiveField(5)
-  final num? price;
+  final String? price;
 
   BookEntity({
     required this.bookId,

@@ -18,8 +18,8 @@ class _SpalshViewBodyState extends State<SpalshViewBody> {
   @override
   void initState() {
     super.initState();
-    navigateToWelcome();
-    //navigateToHome();
+    //navigateToWelcome();
+    navigateToHome();
   }
 
   @override

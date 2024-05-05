@@ -1,6 +1,7 @@
 import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/presentation/views/widgets/best_seller_listview.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_appbar.dart';
+import 'package:bookly/features/home/presentation/views/widgets/feature_books_listview_blocbuilder.dart';
 import 'package:bookly/features/home/presentation/views/widgets/featured_books_list_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class HomeViewBody extends StatelessWidget {
             CustomAppBar(),
             Padding(
               padding: EdgeInsets.only(left: 0),
-              child: FeaturedBooksListView(),
+              child: FeatureBooksListViewBlocBuilder(),
             ),
             SizedBox(
               height: 40,
@@ -47,3 +48,5 @@ class HomeViewBody extends StatelessWidget {
     ]);
   }
 }
+
+
